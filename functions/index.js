@@ -19,6 +19,7 @@ app.get('*', server.onRequest);
 
 //dont check content-type and just always try to parse body as json
 app.post('*', bodyParser.json({ type: () => true }), server.onRequest);
+app.listen({ port: 3001 }, () => console.log(`Prerender server accepting requests on port 3001`))
 
 server.start();
 

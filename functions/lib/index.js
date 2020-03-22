@@ -1,15 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const http = require('http');
 const basename = path.basename;
 const server = require('./server');
 
-const functions = require('firebase-functions');
 exports = module.exports = (options = {}) => {
-
 	server.init(options);
 	server.onRequest = server.onRequest.bind(server);
-	
 	return server;
 };
 
